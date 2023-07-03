@@ -6,6 +6,7 @@ import products from "./data";
 const App = () => {
   const [cart, setCart] = useState([]);
 
+  // Add to cart
   const addToCart = (product) => {
     const exist = cart.find((item) => item.id === product.id);
 
@@ -20,6 +21,7 @@ const App = () => {
     }
   };
 
+  // Add quantity
   const addQty = (product) => {
     setCart(
       cart.map((item) =>
@@ -28,6 +30,7 @@ const App = () => {
     );
   };
 
+  // Reduce quantity
   const reduceQty = (product) => {
     const exist = cart.find((item) => item.id === product.id);
 
@@ -42,6 +45,7 @@ const App = () => {
     }
   };
 
+  // Remove from cart
   const removeFromCart = (product) => {
     setCart(cart.filter((item) => item.id !== product.id));
   };
